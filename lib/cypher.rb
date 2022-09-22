@@ -13,10 +13,6 @@ class Cypher
     @input.downcase.chars
   end
 
-  def line_break(message)
-
-  end
-
   def encode
     encoded = []
     break_down.each { |character| encoded << @simple_cypher_line_1[character] }
@@ -24,6 +20,6 @@ class Cypher
     break_down.each { |character| encoded << @simple_cypher_line_2[character] }
     encoded << "\n"
     break_down.each { |character| encoded << @simple_cypher_line_3[character] }
-    encoded
+    encoded.join
   end
 end

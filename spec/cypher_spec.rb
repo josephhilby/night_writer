@@ -7,6 +7,7 @@ RSpec.describe Cypher do
   before(:each) do
     @cypher = Cypher.new('Hh ')
   end
+
   context "Initilize" do
     it "#exitst" do
       expect(@cypher).to be_a(Cypher)
@@ -26,7 +27,7 @@ RSpec.describe Cypher do
     end
 
     it "#encode" do
-      expect(@cypher.encode).to eq(["O.", "O.", "  ", "\n", "OO", "OO", "  ", "\n", "..", "..", "  ",])
+      expect(@cypher.encode).to eq("O.O.  \nOOOO  \n....  ")
     end
   end
 end

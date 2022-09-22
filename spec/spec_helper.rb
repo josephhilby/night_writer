@@ -1,7 +1,7 @@
 require "simplecov"
 SimpleCov.start
 
-# require_relative 'activity_spec'
+require_relative 'cypher_spec'
 # require_relative
 # require_relative
 

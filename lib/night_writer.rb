@@ -1,3 +1,5 @@
+require './lib/cypher'
+
 message_file = File.open(ARGV[0], 'r')
 message = message_file.read
 count = message.length

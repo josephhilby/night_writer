@@ -13,7 +13,9 @@ RSpec.describe Cypher do
     end
 
     it "#readable" do
-      expect(@cypher.simple_cypher).to be_a(Hash)
+      expect(@cypher.simple_cypher_line_1).to be_a(Hash)
+      expect(@cypher.simple_cypher_line_2).to be_a(Hash)
+      expect(@cypher.simple_cypher_line_3).to be_a(Hash)
       expect(@cypher.input).to be_a(String)
     end
   end
@@ -24,7 +26,7 @@ RSpec.describe Cypher do
     end
 
     it "#encode" do
-      expect(@cypher.encode).to eq(["O.", "O.", "  ", "\n", "OO", "OO", "  ", "\n", "..", "..", "  ", "\n"])
+      expect(@cypher.encode).to eq(["O.", "O.", "  ", "\n", "OO", "OO", "  ", "\n", "..", "..", "  ",])
     end
   end
 end

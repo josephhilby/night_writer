@@ -1,5 +1,3 @@
-require 'pry'
-
 class BletchleyParkComputer
   attr_reader :decrypted_msg
   def initialize(incoming_msg, black_fill)

@@ -1,5 +1,3 @@
-require 'pry'
-
 require 'rspec'
 require './lib/red_fill'
 require './lib/cypher'

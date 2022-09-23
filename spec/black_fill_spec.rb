@@ -1,5 +1,3 @@
-require 'pry'
-
 require 'rspec'
 require './lib/black_fill'
 

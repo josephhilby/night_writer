@@ -1,3 +1,5 @@
+require 'pry'
+
 class BletchleyParkComputer
   attr_reader :decrypted_msg
   def initialize(incoming_msg, red_fill_1, red_fill_2, red_fill_3)
@@ -9,7 +11,8 @@ class BletchleyParkComputer
   end
 
   def line_split
-
+    split_msg = @incoming_msg.split("\n")
+    binding.pry
   end
 end
 

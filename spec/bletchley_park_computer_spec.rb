@@ -4,7 +4,7 @@ require 'rspec'
 require './lib/red_fill'
 require './lib/cypher'
 require './lib/formatter'
-require './lib/bletchley_park'
+require './lib/bletchley_park_computer'
 
 RSpec.describe BletchleyParkComputer do
   before(:each) do
@@ -15,9 +15,10 @@ RSpec.describe BletchleyParkComputer do
     @formatter = Formatter.new(@cypher.encoded_line_1,
                                @cypher.encoded_line_2,
                                @cypher.encoded_line_3)
-    incoming_msg = @formatter.merge
+    @formatter.merge
+    incoming_msg = @formatter.encrypted_message
 
-    @bombe = BletchleyParkComputer(incoming_msg, fill.red_fill_1, fill.red_fill_2, fill.red_fill_3)
+    @bombe = BletchleyParkComputer.new(incoming_msg, fill.red_fill_1, fill.red_fill_2, fill.red_fill_3)
   end
 
   context "Initilize" do
@@ -26,13 +27,13 @@ RSpec.describe BletchleyParkComputer do
     end
 
     it "#readable" do
-      expect(@formatter.decrypted_msg).to eq(nil)
+      expect(@bombe.decrypted_msg).to eq(nil)
     end
   end
 
   context "Methods" do
     it "#line_split" do
-
+      expect(@bombe.line_split).to eq([["O.O.O.O.O.  .OO.O.O.OO", "OO.OO.O..O  OO.OOOO..O", "....O.O.O.  .OO.O.O..."]])
     end
   end
 end

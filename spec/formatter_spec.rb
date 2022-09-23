@@ -15,6 +15,7 @@ RSpec.describe Formatter do
     @formatter_with_cypher = Formatter.new(@cypher.encoded_line_1,
                                            @cypher.encoded_line_2,
                                            @cypher.encoded_line_3)
+    @formatter_with_cypher.merge
   end
 
   context "Initilize" do
@@ -39,7 +40,7 @@ RSpec.describe Formatter do
     it "#merge" do
       @formatter.merge
       expect(@formatter.encrypted_message).to eq("O.O.  \nOOOO  \n....  ")
-      expect(@formatter_with_cypher).to eq("O.O.O.O.O.  .OO.O.O.OO\nOO.OO.O..O  OO.OOOO..O\n....O.O.O.  .OO.O.O...")
+      expect(@formatter_with_cypher.encrypted_message).to eq("O.O.O.O.O.  .OO.O.O.OO\nOO.OO.O..O  OO.OOOO..O\n....O.O.O.  .OO.O.O...")
     end
   end
 end

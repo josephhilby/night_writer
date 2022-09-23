@@ -6,8 +6,19 @@ require './lib/formatter'
 
 RSpec.describe Formatter do
   before(:each) do
-    @formatter = Formatter.new
-    @cypher = Cypher.new('hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh')
+    @formatter = Formatter.new("O.O.  ", "OOOO  ", "....  ")
+
+    @cypher = Cypher.new('Hh ')
+    @cypher.encode
+    @formatter_with_cypher = Formatter.new(@cypher.encoded_line_1,
+                                           @cypher.encoded_line_2,
+                                           @cypher.encoded_line_3)
+
+    @long_cypher = Cypher.new('hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh')
+    @long_cypher.encode
+    @formatter_with_long_cypher = Formatter.new(@long_cypher.encoded_line_1,
+                                                @long_cypher.encoded_line_2,
+                                                @long_cypher.encoded_line_3)
   end
 
   context "Initilize" do
@@ -16,11 +27,15 @@ RSpec.describe Formatter do
     end
 
     it "#readable" do
-      expect(@formatter.simple_cypher_line_1).to be_a(Hash)
+      expect(@formatter.encrypted_message).to eq(nil)
     end
   end
 
   context "Methods" do
+    it "#line_break" do
+      expect(@formatter)
+    end
+
 
   end
 end

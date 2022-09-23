@@ -14,15 +14,23 @@ RSpec.describe Cypher do
     end
 
     it "#readable" do
-      expect(@cypher.simple_cypher_line_1).to be_a(Hash)
-      expect(@cypher.simple_cypher_line_2).to be_a(Hash)
-      expect(@cypher.simple_cypher_line_3).to be_a(Hash)
+      expect(@cypher.encoded_line_1).to eq(nil)
+      expect(@cypher.encoded_line_2).to eq(nil)
+      expect(@cypher.encoded_line_3).to eq(nil)
       expect(@cypher.input).to be_a(String)
     end
   end
 
   context "Methods" do
-    it "#line_break" do
+    it "#break_down" do
+      expect(@cypher.break_down).to eq(['h', 'h', ' '])
+    end
+
+    it "#encode" do
+      @cypher.encode
+      expect(@cypher.encoded_line_1).to eq("O.O.  ")
+      expect(@cypher.encoded_line_2).to eq("OOOO  ")
+      expect(@cypher.encoded_line_3).to eq("....  ")
     end
   end
 end

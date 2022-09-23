@@ -1,4 +1,5 @@
 require './lib/cypher'
+# require './lib/formatter'
 
 message_file = File.open(ARGV[0], 'r')
 message = message_file.read

@@ -6,7 +6,7 @@ require './lib/formatter'
 
 RSpec.describe Formatter do
   before(:each) do
-    @formatter = Formatter.new("O.O.  ", "OOOO  ", "....  ")
+    @formatter = Formatter.new(["O.O.  "], ["OOOO  "], ["....  "])
 
     @cypher = Cypher.new('Hh ')
     @cypher.encode
@@ -32,10 +32,18 @@ RSpec.describe Formatter do
   end
 
   context "Methods" do
-    it "#line_break" do
-      expect(@formatter)
+
+    it "#line_split" do
+      expect(@formatter.line_split).to eq(["....  "])
     end
 
+    it "#line_break" do
+      expect(@formatter.line_break).to eq(["....  \n"])
+    end
 
+    it "#merge" do
+      @formatter.merge
+      expect(@formatter.encrypted_message).to eq("O.O.  \nOOOO  \n....  ")
+    end
   end
 end

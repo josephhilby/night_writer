@@ -17,8 +17,8 @@ class Cypher
   end
 
   def encode
-    @encoded_line_1 = break_down.map { |character| @simple_cypher_line_1[character] }.join
-    @encoded_line_2 = break_down.map { |character| @simple_cypher_line_2[character] }.join
-    @encoded_line_3 = break_down.map { |character| @simple_cypher_line_3[character] }.join
+    @encoded_line_1 = [break_down.map { |character| @simple_cypher_line_1[character] }.join]
+    @encoded_line_2 = [break_down.map { |character| @simple_cypher_line_2[character] }.join]
+    @encoded_line_3 = [break_down.map { |character| @simple_cypher_line_3[character] }.join]
   end
 end

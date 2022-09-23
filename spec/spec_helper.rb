@@ -2,7 +2,7 @@ require "simplecov"
 SimpleCov.start
 
 require_relative 'cypher_spec'
-# require_relative
+require_relative 'formatter_spec'
 # require_relative
 
 

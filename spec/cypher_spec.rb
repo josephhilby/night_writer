@@ -28,9 +28,9 @@ RSpec.describe Cypher do
 
     it "#encode" do
       @cypher.encode
-      expect(@cypher.encoded_line_1).to eq("O.O.  ")
-      expect(@cypher.encoded_line_2).to eq("OOOO  ")
-      expect(@cypher.encoded_line_3).to eq("....  ")
+      expect(@cypher.encoded_line_1).to eq(["O.O.  "])
+      expect(@cypher.encoded_line_2).to eq(["OOOO  "])
+      expect(@cypher.encoded_line_3).to eq(["....  "])
     end
   end
 end

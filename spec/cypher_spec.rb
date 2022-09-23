@@ -1,11 +1,13 @@
 require 'pry'
 
 require 'rspec'
+require './lib/red_fill'
 require './lib/cypher'
 
 RSpec.describe Cypher do
   before(:each) do
-    @cypher = Cypher.new('Hh ')
+    fill = RedFill.new
+    @cypher = Cypher.new('Hh ', fill.red_fill_1, fill.red_fill_2, fill.red_fill_3)
   end
 
   context "Initilize" do

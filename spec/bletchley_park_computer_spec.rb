@@ -10,7 +10,7 @@ RSpec.describe BletchleyParkComputer do
   before(:each) do
     r_fill = RedFill.new
     b_fill = BlackFill.new
-    @cypher = Cypher.new('Hello', r_fill.red_fill_1, r_fill.red_fill_2, r_fill.red_fill_3)
+    @cypher = Cypher.new('hello', r_fill.red_fill_1, r_fill.red_fill_2, r_fill.red_fill_3)
     @cypher.encode
 
     @formatter = Formatter.new(@cypher.encoded_line_1,

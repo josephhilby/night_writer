@@ -1,5 +1,3 @@
-require 'pry'
-
 class Formatter
   attr_reader :encrypted_message
   def initialize(encrypted_line_1, encrypted_line_2, encrypted_line_3)

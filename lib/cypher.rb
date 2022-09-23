@@ -1,5 +1,3 @@
-require 'pry'
-
 class Cypher
   attr_reader :input, :encoded_line_1, :encoded_line_2, :encoded_line_3
   def initialize(input)

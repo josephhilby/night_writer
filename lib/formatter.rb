@@ -11,7 +11,6 @@ class Formatter
     @encrypted_arrays_1 = @encrypted_line_1[0].scan(/.{1,80}/)
     @encrypted_arrays_2 = @encrypted_line_2[0].scan(/.{1,80}/)
     @encrypted_arrays_3 = @encrypted_line_3[0].scan(/.{1,80}/)
-
   end
 
   def line_break

@@ -1,5 +1,3 @@
-require 'pry'
-
 require 'rspec'
 require './lib/red_fill'
 require './lib/cypher'
@@ -7,21 +5,15 @@ require './lib/formatter'
 
 RSpec.describe Formatter do
   before(:each) do
-    fill = RedFill.new
-    @cypher = Cypher.new('Hh ', fill.red_fill_1, fill.red_fill_2, fill.red_fill_3)
     @formatter = Formatter.new(["O.O.  "], ["OOOO  "], ["....  "])
 
-    @cypher = Cypher.new('Hh ', fill.red_fill_1, fill.red_fill_2, fill.red_fill_3)
+    fill = RedFill.new
+    @cypher = Cypher.new('Hello World', fill.red_fill_1, fill.red_fill_2, fill.red_fill_3)
     @cypher.encode
     @formatter_with_cypher = Formatter.new(@cypher.encoded_line_1,
                                            @cypher.encoded_line_2,
                                            @cypher.encoded_line_3)
-
-    @long_cypher = Cypher.new('hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh', fill.red_fill_1, fill.red_fill_2, fill.red_fill_3)
-    @long_cypher.encode
-    @formatter_with_long_cypher = Formatter.new(@long_cypher.encoded_line_1,
-                                                @long_cypher.encoded_line_2,
-                                                @long_cypher.encoded_line_3)
+    @formatter_with_cypher.merge
   end
 
   context "Initilize" do
@@ -35,7 +27,6 @@ RSpec.describe Formatter do
   end
 
   context "Methods" do
-
     it "#line_split" do
       expect(@formatter.line_split).to eq(["....  "])
     end
@@ -47,6 +38,7 @@ RSpec.describe Formatter do
     it "#merge" do
       @formatter.merge
       expect(@formatter.encrypted_message).to eq("O.O.  \nOOOO  \n....  ")
+      expect(@formatter_with_cypher.encrypted_message).to eq("O.O.O.O.O.  .OO.O.O.OO\nOO.OO.O..O  OO.OOOO..O\n....O.O.O.  .OO.O.O...")
     end
   end
 end

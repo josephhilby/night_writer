@@ -22,12 +22,7 @@ RSpec.describe Cypher do
   end
 
   context "Methods" do
-    it "#break_down" do
-      expect(@cypher.break_down).to eq(['h', 'h', ' '])
-    end
-
-    it "#encode" do
-      expect(@cypher.encode).to eq("O.O.  \nOOOO  \n....  ")
+    it "#line_break" do
     end
   end
 end

@@ -1,10 +1,12 @@
+require './lib/red_fill'
+
 class Cypher
   attr_reader :input, :encoded_line_1, :encoded_line_2, :encoded_line_3
-  def initialize(input)
+  def initialize(input, red_fill_1, red_fill_2, red_fill_3)
     @input = input
-    @simple_cypher_line_1 = { 'h' => "O.", ' ' => "  " }
-    @simple_cypher_line_2 = { 'h' => "OO", ' ' => "  " }
-    @simple_cypher_line_3 = { 'h' => "..", ' ' => "  " }
+    @simple_cypher_line_1 = red_fill_1
+    @simple_cypher_line_2 = red_fill_2
+    @simple_cypher_line_3 = red_fill_3
     @encoded_line_1 = nil
     @encoded_line_2 = nil
     @encoded_line_3 = nil

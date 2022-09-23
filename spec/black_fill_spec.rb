@@ -13,8 +13,6 @@ RSpec.describe BlackFill do
 
     it "#readable" do
       expect(@fill.black_fill['h']).to eq(["O.", "OO", ".."])
-      # expect(@fill.red_fill_2['m']).to eq('..')
-      # expect(@fill.red_fill_3['k']).to eq('O.')
     end
   end
 end

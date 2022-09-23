@@ -32,6 +32,6 @@ class BletchleyParkComputer
   end
 
   def letter_decode
-    @decrypted_msg = letter_join.map {|encoded_ltr| @simple_cypher.key(encoded_ltr)}.join
+    @decrypted_msg = letter_join.map { |encoded_ltr| @simple_cypher.key(encoded_ltr) }.join
   end
 end

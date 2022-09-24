@@ -1,5 +1,3 @@
-require './lib/red_fill'
-
 class Cypher
   attr_reader :input, :encoded_line_1, :encoded_line_2, :encoded_line_3
   def initialize(input, red_fill_1, red_fill_2, red_fill_3)
@@ -17,8 +15,8 @@ class Cypher
   end
 
   def encode
-    @encoded_line_1 = [break_down.map { |character| @simple_cypher_line_1[character] }.join]
-    @encoded_line_2 = [break_down.map { |character| @simple_cypher_line_2[character] }.join]
-    @encoded_line_3 = [break_down.map { |character| @simple_cypher_line_3[character] }.join]
+    @encoded_line_1 = [ break_down.map { |character| @simple_cypher_line_1[character] }.join ]
+    @encoded_line_2 = [ break_down.map { |character| @simple_cypher_line_2[character] }.join ]
+    @encoded_line_3 = [ break_down.map { |character| @simple_cypher_line_3[character] }.join ]
   end
 end

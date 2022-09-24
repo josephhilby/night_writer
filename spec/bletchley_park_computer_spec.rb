@@ -6,14 +6,14 @@ require './lib/bletchley_park_computer'
 RSpec.describe BletchleyParkComputer do
   before(:each) do
     b_fill = BlackFill.new
-    formatter = Formatter.new(["O.O.O.O.O."],
-                              ["OO.OO.O..O"],
-                              ["....O.O.O."])
-    allow(b_fill).to receive(:black_fill).and_return({ 'e' => ['O.', '.O', '..'],
-                                                       'h' => ["O.", "OO", ".."],
-                                                       'l' => ['O.', 'O.', 'O.'],
-                                                       'o' => ['O.', '.O', 'O.'] })
-    allow(formatter).to receive(:encrypted_message).and_return("O.O.O.O.O.\nOO.OO.O..O\n....O.O.O.")
+    formatter = Formatter.new(["0.0.0.0.0."],
+                              ["00.00.0..0"],
+                              ["....0.0.0."])
+    allow(b_fill).to receive(:black_fill).and_return({ 'e' => ['0.', '.0', '..'],
+                                                       'h' => ["0.", "00", ".."],
+                                                       'l' => ['0.', '0.', '0.'],
+                                                       'o' => ['0.', '.0', '0.'] })
+    allow(formatter).to receive(:encrypted_message).and_return("0.0.0.0.0.\n00.00.0..0\n....0.0.0.")
     incoming_msg = formatter.encrypted_message
     @bombe = BletchleyParkComputer.new(incoming_msg, b_fill.black_fill)
   end
@@ -30,19 +30,19 @@ RSpec.describe BletchleyParkComputer do
 
   context "Methods" do
     it "#file_split" do
-      expect(@bombe.file_split).to eq(["O.O.O.O.O.", "OO.OO.O..O", "....O.O.O."])
+      expect(@bombe.file_split).to eq(["0.0.0.0.0.", "00.00.0..0", "....0.0.0."])
     end
 
     it "#line_join" do
-      expect(@bombe.line_parts_join).to eq([ ["O.O.O.O.O.", "OO.OO.O..O", "....O.O.O."] ])
+      expect(@bombe.line_parts_join).to eq([ ["0.0.0.0.0.", "00.00.0..0", "....0.0.0."] ])
     end
 
     it "#letter_split" do
-      expect(@bombe.letter_split).to eq([ [ ["O.", "O.", "O.", "O.", "O."], ["OO", ".O", "O.", "O.", ".O"], ["..", "..", "O.", "O.", "O."] ] ])
+      expect(@bombe.letter_split).to eq([ [ ["0.", "0.", "0.", "0.", "0."], ["00", ".0", "0.", "0.", ".0"], ["..", "..", "0.", "0.", "0."] ] ])
     end
 
     it "#letter_reorder" do
-      expect(@bombe.letter_reorder).to eq(["O.", "OO", "..", "O.", ".O", "..", "O.", "O.", "O.", "O.", "O.", "O.", "O.", ".O", "O."])
+      expect(@bombe.letter_reorder).to eq(["0.", "00", "..", "0.", ".0", "..", "0.", "0.", "0.", "0.", "0.", "0.", "0.", ".0", "0."])
     end
 
     it "#letter_decode" do

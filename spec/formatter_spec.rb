@@ -5,7 +5,7 @@ require './lib/formatter'
 
 RSpec.describe Formatter do
   before(:each) do
-    @formatter = Formatter.new(["O.O.  "], ["OOOO  "], ["....  "])
+    @formatter = Formatter.new(["0.0.  "], ["0000  "], ["....  "])
   end
 
   context "Initilize" do
@@ -29,7 +29,7 @@ RSpec.describe Formatter do
 
     it "#merge" do
       @formatter.merge
-      expect(@formatter.encrypted_message).to eq("O.O.  \nOOOO  \n....  ")
+      expect(@formatter.encrypted_message).to eq("0.0.  \n0000  \n....  ")
     end
   end
 end

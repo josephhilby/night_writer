@@ -1,6 +1,6 @@
 require 'rspec'
-require './lib/black_fill'
 require './lib/red_fill'
+require './lib/black_fill'
 require './lib/cypher'
 require './lib/formatter'
 require './lib/bletchley_park_computer'

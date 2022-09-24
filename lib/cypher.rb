@@ -1,5 +1,3 @@
-require './lib/red_fill'
-
 class Cypher
   attr_reader :input, :encoded_line_1, :encoded_line_2, :encoded_line_3
   def initialize(input, red_fill_1, red_fill_2, red_fill_3)

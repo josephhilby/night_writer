@@ -8,11 +8,11 @@ RSpec.describe Formatter do
     @formatter = Formatter.new(["O.O.  "], ["OOOO  "], ["....  "])
 
     r_fill = RedFill.new
-    @cypher = Cypher.new('Hello World', r_fill.red_fill_1, r_fill.red_fill_2, r_fill.red_fill_3)
-    @cypher.encode
-    @formatter_with_cypher = Formatter.new(@cypher.encoded_line_1,
-                                           @cypher.encoded_line_2,
-                                           @cypher.encoded_line_3)
+    cypher = Cypher.new('Hello World', r_fill.red_fill_1, r_fill.red_fill_2, r_fill.red_fill_3)
+    cypher.encode
+    @formatter_with_cypher = Formatter.new(cypher.encoded_line_1,
+                                           cypher.encoded_line_2,
+                                           cypher.encoded_line_3)
     @formatter_with_cypher.merge
   end
 

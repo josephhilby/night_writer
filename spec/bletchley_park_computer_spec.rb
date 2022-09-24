@@ -17,7 +17,7 @@ RSpec.describe BletchleyParkComputer do
                               cypher.encoded_line_3)
     formatter.merge
     incoming_msg = formatter.encrypted_message
-
+    #replace above with stub
     @bombe = BletchleyParkComputer.new(incoming_msg, b_fill.black_fill)
   end
 

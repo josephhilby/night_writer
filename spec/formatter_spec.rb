@@ -5,7 +5,7 @@ require './lib/formatter'
 
 RSpec.describe Formatter do
   before(:each) do
-    @formatter = Formatter.new(["0.0.  "], ["0000  "], ["....  "])
+    @formatter = Formatter.new(["0.0..."], ["0000.."], ["......"])
   end
 
   context "Initilize" do
@@ -20,16 +20,16 @@ RSpec.describe Formatter do
 
   context "Methods" do
     it "#line_split" do
-      expect(@formatter.line_split).to eq(["....  "])
+      expect(@formatter.line_split).to eq(["......"])
     end
 
     it "#line_break" do
-      expect(@formatter.line_end_break).to eq(["....  \n"])
+      expect(@formatter.line_end_break).to eq(["......\n"])
     end
 
     it "#merge" do
       @formatter.merge
-      expect(@formatter.encrypted_message).to eq("0.0.  \n0000  \n....  ")
+      expect(@formatter.encrypted_message).to eq("0.0...\n0000..\n......")
     end
   end
 end

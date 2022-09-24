@@ -34,11 +34,11 @@ RSpec.describe BletchleyParkComputer do
     end
 
     it "#line_join" do
-      expect(@bombe.line_parts_join).to eq([["O.O.O.O.O.", "OO.OO.O..O", "....O.O.O."]])
+      expect(@bombe.line_parts_join).to eq([ ["O.O.O.O.O.", "OO.OO.O..O", "....O.O.O."] ])
     end
 
     it "#letter_split" do
-      expect(@bombe.letter_split).to eq([[["O.", "O.", "O.", "O.", "O."], ["OO", ".O", "O.", "O.", ".O"], ["..", "..", "O.", "O.", "O."]]])
+      expect(@bombe.letter_split).to eq([ [ ["O.", "O.", "O.", "O.", "O."], ["OO", ".O", "O.", "O.", ".O"], ["..", "..", "O.", "O.", "O."] ] ])
     end
 
     it "#letter_reorder" do

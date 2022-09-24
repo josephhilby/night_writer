@@ -27,7 +27,6 @@ class BletchleyParkComputer
   end
 
   def letter_join
-    letter_reorder
     letter_reorder.each_slice(3).to_a
   end
 

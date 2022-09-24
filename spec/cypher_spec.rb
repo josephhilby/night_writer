@@ -4,8 +4,8 @@ require './lib/cypher'
 
 RSpec.describe Cypher do
   before(:each) do
-    fill = RedFill.new
-    @cypher = Cypher.new('Hh ', fill.red_fill_1, fill.red_fill_2, fill.red_fill_3)
+    r_fill = RedFill.new
+    @cypher = Cypher.new('Hh ', r_fill.red_fill_1, r_fill.red_fill_2, r_fill.red_fill_3)
   end
 
   context "Initilize" do

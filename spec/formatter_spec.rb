@@ -7,8 +7,8 @@ RSpec.describe Formatter do
   before(:each) do
     @formatter = Formatter.new(["O.O.  "], ["OOOO  "], ["....  "])
 
-    fill = RedFill.new
-    @cypher = Cypher.new('Hello World', fill.red_fill_1, fill.red_fill_2, fill.red_fill_3)
+    r_fill = RedFill.new
+    @cypher = Cypher.new('Hello World', r_fill.red_fill_1, r_fill.red_fill_2, r_fill.red_fill_3)
     @cypher.encode
     @formatter_with_cypher = Formatter.new(@cypher.encoded_line_1,
                                            @cypher.encoded_line_2,
@@ -32,7 +32,7 @@ RSpec.describe Formatter do
     end
 
     it "#line_break" do
-      expect(@formatter.line_break).to eq(["....  \n"])
+      expect(@formatter.line_end_break).to eq(["....  \n"])
     end
 
     it "#merge" do

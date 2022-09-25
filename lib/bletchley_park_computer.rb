@@ -20,9 +20,7 @@ class BletchleyParkComputer
 
   def letter_reorder
     ordered_letters = []
-    letter_split.each do |line|
-        ordered_letters << [ line[0].zip(line[1]).zip(line[2]) ]
-    end
+    letter_split.each { |line| ordered_letters << [ line[0].zip(line[1]).zip(line[2]) ] }
     ordered_letters.flatten
   end
 

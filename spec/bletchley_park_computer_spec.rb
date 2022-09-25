@@ -30,7 +30,7 @@ RSpec.describe BletchleyParkComputer do
       expect(@bombe.file_split).to eq(["0.0.0.0.0.", "00.00.0..0", "....0.0.0."])
     end
 
-    it "#line_join" do
+    it "#line_parts_join" do
       expect(@bombe.line_parts_join).to eq([ ["0.0.0.0.0.", "00.00.0..0", "....0.0.0."] ])
     end
 

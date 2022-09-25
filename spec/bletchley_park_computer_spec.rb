@@ -42,6 +42,10 @@ RSpec.describe BletchleyParkComputer do
       expect(@bombe.letter_reorder).to eq(["0.", "00", "..", "0.", ".0", "..", "0.", "0.", "0.", "0.", "0.", "0.", "0.", ".0", "0."])
     end
 
+    it "#letter_join" do
+      expect(@bombe.letter_join).to eq([ ["0.", "00", ".."], ["0.", ".0", ".."], ["0.", "0.", "0."], ["0.", "0.", "0."], ["0.", ".0", "0."] ])
+    end
+
     it "#letter_decode" do
       @bombe.letter_decode
       expect(@bombe.decrypted_msg).to eq('hello')

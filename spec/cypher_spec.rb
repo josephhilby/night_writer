@@ -35,7 +35,7 @@ RSpec.describe Cypher do
       expect(@cypher.line_split).to eq(["......"])
     end
 
-    it "#line_break" do
+    it "#line_end_break" do
       expect(@cypher.line_end_break).to eq(["......\n"])
     end
 

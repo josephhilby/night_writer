@@ -27,8 +27,8 @@ RSpec.describe Cypher do
       expect(@cypher.break_down).to eq(['h', 'h', ' '])
     end
 
-    it "#encode" do
-      expect(@cypher.encode).to eq(["......"])
+    it "#encode_lines" do
+      expect(@cypher.encode_lines).to eq(["......"])
     end
 
     it "#line_split" do
@@ -39,8 +39,8 @@ RSpec.describe Cypher do
       expect(@cypher.line_end_break).to eq(["......\n"])
     end
 
-    it "#merge" do
-      @cypher.merge
+    it "#encode" do
+      @cypher.encode
       expect(@cypher.encrypted_message).to eq("0.0...\n0000..\n......")
     end
   end

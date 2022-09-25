@@ -17,10 +17,8 @@ RSpec.describe Cypher do
     end
 
     it "#readable" do
-      expect(@cypher.encoded_line_1).to eq(nil)
-      expect(@cypher.encoded_line_2).to eq(nil)
-      expect(@cypher.encoded_line_3).to eq(nil)
       expect(@cypher.input).to be_a(String)
+      expect(@cypher.encrypted_message).to eq(nil)
     end
   end
 
@@ -30,10 +28,20 @@ RSpec.describe Cypher do
     end
 
     it "#encode" do
-      @cypher.encode
-      expect(@cypher.encoded_line_1).to eq(["0.0..."])
-      expect(@cypher.encoded_line_2).to eq(["0000.."])
-      expect(@cypher.encoded_line_3).to eq(["......"])
+      expect(@cypher.encode).to eq(["......"])
+    end
+
+    it "#line_split" do
+      expect(@cypher.line_split).to eq(["......"])
+    end
+
+    it "#line_break" do
+      expect(@cypher.line_end_break).to eq(["......\n"])
+    end
+
+    it "#merge" do
+      @cypher.merge
+      expect(@cypher.encrypted_message).to eq("0.0...\n0000..\n......")
     end
   end
 end

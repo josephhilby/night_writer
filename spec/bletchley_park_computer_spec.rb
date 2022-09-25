@@ -1,20 +1,17 @@
 require 'rspec'
 require './lib/black_fill'
-require './lib/formatter'
 require './lib/bletchley_park_computer'
 
 RSpec.describe BletchleyParkComputer do
   before(:each) do
     b_fill = BlackFill.new
-    formatter = Formatter.new(["0.0.0.0.0."],
-                              ["00.00.0..0"],
-                              ["....0.0.0."])
+    cypher = Cypher.new('hello', 'red_fill_1', 'red_fill_2', 'red_fill_3')
     allow(b_fill).to receive(:black_fill).and_return({ 'e' => ['0.', '.0', '..'],
                                                        'h' => ["0.", "00", ".."],
                                                        'l' => ['0.', '0.', '0.'],
                                                        'o' => ['0.', '.0', '0.'] })
-    allow(formatter).to receive(:encrypted_message).and_return("0.0.0.0.0.\n00.00.0..0\n....0.0.0.")
-    incoming_msg = formatter.encrypted_message
+    allow(cypher).to receive(:encrypted_message).and_return("0.0.0.0.0.\n00.00.0..0\n....0.0.0.")
+    incoming_msg = cypher.encrypted_message
     @bombe = BletchleyParkComputer.new(incoming_msg, b_fill.black_fill)
   end
 

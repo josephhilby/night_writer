@@ -1,8 +1,11 @@
+require './lib/simple_key_loader'
+
 class BletchleyParkComputer
+  include SimpleKeyLoader
   attr_reader :decrypted_msg
-  def initialize(incoming_msg, black_fill)
+  def initialize(incoming_msg)
     @incoming_msg = incoming_msg
-    @simple_cypher = black_fill
+    @simple_cypher = nil
     @decrypted_msg = nil
   end
 
@@ -20,9 +23,7 @@ class BletchleyParkComputer
 
   def letter_reorder
     ordered_letters = []
-    letter_split.each do |line|
-        ordered_letters << [ line[0].zip(line[1]).zip(line[2]) ]
-    end
+    letter_split.each { |line| ordered_letters << [ line[0].zip(line[1]).zip(line[2]) ] }
     ordered_letters.flatten
   end
 

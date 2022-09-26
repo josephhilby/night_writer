@@ -1,8 +1,7 @@
 require "simplecov"
 SimpleCov.start
 
-require_relative 'black_fill_spec'
-require_relative 'red_fill_spec'
+require_relative 'simple_key_loader_spec'
 require_relative 'cypher_spec'
 require_relative 'bletchley_park_computer_spec'
 

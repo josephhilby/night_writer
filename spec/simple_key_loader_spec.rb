@@ -1,5 +1,3 @@
-require 'pry'
-
 require 'rspec'
 require './lib/simple_key_loader'
 require './lib/cypher'

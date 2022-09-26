@@ -20,16 +20,16 @@ RSpec.describe Cypher do
   end
 
   context "Methods" do
-    it "#break_down" do
-      expect(@cypher.break_down).to eq(['h', 'h', ' '])
+    it "#input_msg_to_chars" do
+      expect(@cypher.input_msg_to_chars).to eq(['h', 'h', ' '])
     end
 
     it "#encode_lines" do
       expect(@cypher.encode_lines).to eq(["......"])
     end
 
-    it "#line_split" do
-      expect(@cypher.line_split).to eq(["......"])
+    it "#line_wrap" do
+      expect(@cypher.line_wrap).to eq(["......"])
     end
 
     it "#line_end_break" do

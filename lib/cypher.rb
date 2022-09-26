@@ -1,10 +1,13 @@
+require './lib/simple_key_loader'
+
 class Cypher
+  include SimpleKeyLoader
   attr_reader :input, :encrypted_message
-  def initialize(input, red_fill_1, red_fill_2, red_fill_3)
+  def initialize(input)
     @input = input
-    @simple_cypher_line_1 = red_fill_1
-    @simple_cypher_line_2 = red_fill_2
-    @simple_cypher_line_3 = red_fill_3
+    @simple_cypher_line_1 = nil
+    @simple_cypher_line_2 = nil
+    @simple_cypher_line_3 = nil
     @encrypted_message = nil
   end
 

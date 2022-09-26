@@ -8,7 +8,6 @@ b_fill = BlackFill.new
 bombe = BletchleyParkComputer.new(message, b_fill.black_fill)
 decoded_msg = bombe.letter_decode
 
-
 braille_file = File.open(ARGV[1], 'w')
 count = decoded_msg.length
 braille_file.write(decoded_msg)

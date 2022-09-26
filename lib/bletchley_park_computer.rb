@@ -1,8 +1,11 @@
+require './lib/simple_key_loader'
+
 class BletchleyParkComputer
+  include SimpleKeyLoader
   attr_reader :decrypted_msg
-  def initialize(incoming_msg, black_fill)
+  def initialize(incoming_msg)
     @incoming_msg = incoming_msg
-    @simple_cypher = black_fill
+    @simple_cypher = nil
     @decrypted_msg = nil
   end
 

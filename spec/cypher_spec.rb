@@ -5,9 +5,12 @@ require './lib/cypher'
 RSpec.describe Cypher do
   before(:each) do
     r_fill = RedFill.new
-    allow(r_fill).to receive(:red_fill_1).and_return({ 'h' => '0.', ' ' => '..' })
-    allow(r_fill).to receive(:red_fill_2).and_return({ 'h' => '00', ' ' => '..' })
-    allow(r_fill).to receive(:red_fill_3).and_return({ 'h' => '..', ' ' => '..' })
+    allow(r_fill).to receive(:red_fill_1).and_return({ 'h' => '0.',
+                                                       ' ' => '..' })
+    allow(r_fill).to receive(:red_fill_2).and_return({ 'h' => '00',
+                                                       ' ' => '..' })
+    allow(r_fill).to receive(:red_fill_3).and_return({ 'h' => '..',
+                                                       ' ' => '..' })
     @cypher = Cypher.new('Hh ', r_fill.red_fill_1, r_fill.red_fill_2, r_fill.red_fill_3)
   end
 

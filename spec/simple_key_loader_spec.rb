@@ -5,8 +5,8 @@ require './lib/bletchley_park_computer'
 
 RSpec.describe SimpleKeyLoader do
 
-  let(:cypher) {Cypher.new('hello') {include SimpleKeyLoader}}
-  let(:bletchley_park_computer) {BletchleyParkComputer.new("0.0.0.0.0.\n00.00.0..0\n....0.0.0.") {include SimpleKeyLoader}}
+  let(:cypher) { Cypher.new('hello') {include SimpleKeyLoader} }
+  let(:bletchley_park_computer) { BletchleyParkComputer.new("0.0.0.0.0.\n00.00.0..0\n....0.0.0.") {include SimpleKeyLoader} }
 
   context 'Methods' do
     it "#red_fill" do

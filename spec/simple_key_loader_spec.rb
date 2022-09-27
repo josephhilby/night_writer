@@ -16,7 +16,7 @@ RSpec.describe SimpleKeyLoader do
 
     it "#black_fll" do
       bletchley_park_computer.black_fill
-      expect(bletchley_park_computer.letter_decode).to eq('hello')
+      expect(bletchley_park_computer.decode).to eq('hello')
     end
   end
 end

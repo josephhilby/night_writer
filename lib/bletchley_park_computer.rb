@@ -2,19 +2,16 @@ require './lib/simple_key_loader'
 
 class BletchleyParkComputer
   include SimpleKeyLoader
-  attr_reader :decrypted_msg
   def initialize(incoming_msg)
     @incoming_msg = incoming_msg
-    @simple_cypher = nil
-    @decrypted_msg = nil
   end
 
-  def file_split
+  def file_split_by_line
     @incoming_msg.split("\n")
   end
 
   def line_parts_join
-    file_split.each_slice(3).to_a
+    file_split_by_line.each_slice(3).to_a
   end
 
   def letter_split
@@ -31,7 +28,7 @@ class BletchleyParkComputer
     letter_reorder.each_slice(3).to_a
   end
 
-  def letter_decode
-    @decrypted_msg = letter_join.map { |encoded_ltr| @simple_cypher.key(encoded_ltr) }.join
+  def decode
+    letter_join.map { |encoded_ltr| @simple_cypher.key(encoded_ltr) }.join
   end
 end

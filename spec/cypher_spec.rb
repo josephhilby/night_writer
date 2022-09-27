@@ -24,16 +24,16 @@ RSpec.describe Cypher do
       expect(@cypher.input_msg_to_chars).to eq(['h', 'h', ' '])
     end
 
-    it "#encode_lines" do
-      expect(@cypher.encode_lines).to eq(["......"])
+    it "#encode_line_parts" do
+      expect(@cypher.encode_line_parts).to eq(["......"])
     end
 
     it "#line_wrap" do
       expect(@cypher.line_wrap).to eq(["......"])
     end
 
-    it "#line_end_break" do
-      expect(@cypher.line_end_break).to eq(["......\n"])
+    it "#new_line_at_line_part_end" do
+      expect(@cypher.new_line_at_line_part_end).to eq(["......\n"])
     end
 
     it "#encode" do

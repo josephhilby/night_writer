@@ -5,7 +5,7 @@ message = message_file.read
 
 bombe = BletchleyParkComputer.new(message)
 bombe.black_fill
-decoded_msg = bombe.letter_decode
+decoded_msg = bombe.decode
 
 braille_file = File.open(ARGV[1], 'w')
 count = decoded_msg.length

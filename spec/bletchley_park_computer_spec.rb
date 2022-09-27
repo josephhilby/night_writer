@@ -21,8 +21,8 @@ RSpec.describe BletchleyParkComputer do
   end
 
   context "Methods" do
-    it "#file_split" do
-      expect(@bombe.file_split).to eq(["0.0.0.0.0.", "00.00.0..0", "....0.0.0."])
+    it "#file_split_by_line" do
+      expect(@bombe.file_split_by_line).to eq(["0.0.0.0.0.", "00.00.0..0", "....0.0.0."])
     end
 
     it "#line_parts_join" do
@@ -41,8 +41,8 @@ RSpec.describe BletchleyParkComputer do
       expect(@bombe.letter_join).to eq([ ["0.", "00", ".."], ["0.", ".0", ".."], ["0.", "0.", "0."], ["0.", "0.", "0."], ["0.", ".0", "0."] ])
     end
 
-    it "#letter_decode" do
-      @bombe.letter_decode
+    it "#decode" do
+      @bombe.decode
       expect(@bombe.decrypted_msg).to eq('hello')
     end
   end

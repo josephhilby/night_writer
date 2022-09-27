@@ -4,8 +4,8 @@ require './lib/bletchley_park_computer'
 RSpec.describe BletchleyParkComputer do
   before(:each) do
     cypher = Cypher.new('hello')
-    allow(cypher).to receive(:encrypted_message).and_return("0.0.0.0.0.\n00.00.0..0\n....0.0.0.")
-    incoming_msg = cypher.encrypted_message
+    allow(cypher).to receive(:encode).and_return("0.0.0.0.0.\n00.00.0..0\n....0.0.0.")
+    incoming_msg = cypher.encode
     @bombe = BletchleyParkComputer.new(incoming_msg)
     @bombe.black_fill
   end

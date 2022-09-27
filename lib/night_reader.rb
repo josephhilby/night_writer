@@ -8,8 +8,8 @@ bombe.black_fill
 decoded_msg = bombe.decode
 
 braille_file = File.open(ARGV[1], 'w')
-count = decoded_msg.length
 braille_file.write(decoded_msg)
 braille_file.close
+count = decoded_msg.length
 
 puts "Created #{ARGV[1]} containing #{count} characters"

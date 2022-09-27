@@ -2,13 +2,8 @@ require './lib/simple_key_loader'
 
 class Cypher
   include SimpleKeyLoader
-  attr_reader :input, :encrypted_message
   def initialize(input)
     @input = input
-    @simple_cypher_line_1 = nil
-    @simple_cypher_line_2 = nil
-    @simple_cypher_line_3 = nil
-    @encrypted_message = nil
   end
 
   def input_msg_to_chars

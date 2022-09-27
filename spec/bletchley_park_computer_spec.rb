@@ -14,10 +14,6 @@ RSpec.describe BletchleyParkComputer do
     it "#exitst" do
       expect(@bombe).to be_a(BletchleyParkComputer)
     end
-
-    it "#readable" do
-      expect(@bombe.decrypted_msg).to eq(nil)
-    end
   end
 
   context "Methods" do
@@ -42,8 +38,7 @@ RSpec.describe BletchleyParkComputer do
     end
 
     it "#decode" do
-      @bombe.decode
-      expect(@bombe.decrypted_msg).to eq('hello')
+      expect(@bombe.decode).to eq('hello')
     end
   end
 end

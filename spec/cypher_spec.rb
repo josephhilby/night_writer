@@ -12,11 +12,6 @@ RSpec.describe Cypher do
     it "#exitst" do
       expect(@cypher).to be_a(Cypher)
     end
-
-    it "#readable" do
-      expect(@cypher.input).to be_a(String)
-      expect(@cypher.encrypted_message).to eq(nil)
-    end
   end
 
   context "Methods" do
@@ -37,8 +32,7 @@ RSpec.describe Cypher do
     end
 
     it "#encode" do
-      @cypher.encode
-      expect(@cypher.encrypted_message).to eq("0.0...\n0000..\n......")
+      expect(@cypher.encode).to eq("0.0...\n0000..\n......")
     end
   end
 end
